@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: "Inter", sans-serif;
+  }
+
+}
+
+@layer components {
+  .sticky {
+    @apply !fixed !z-[9999] !transition !bg-white !bg-opacity-80;
+    backdrop-filter: blur(5px);
+    box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .sticky .header-logo {
+    @apply py-3 lg:py-2;
+  }
+  
+  .sticky .menu-scroll.active {
+    @apply text-primary;
+  }
+  
+  .navbarTogglerActive > span:nth-child(1) {
+    @apply transform rotate-45 top-[7px];
+  }
+  .navbarTogglerActive > span:nth-child(2) {
+    @apply opacity-0;
+  }
+  .navbarTogglerActive > span:nth-child(3) {
+    @apply top-[-8px] rotate-[135deg];
+  }
+  
+  input#checkboxLabel:checked ~ .box span {
+    @apply opacity-100;
+  }
+}
+
+/*BryceBayens*/
+@keyframes animated_text {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.text-gradient {
+  background-image: linear-gradient(92.31deg, rgba(80, 20, 208, 0.31) 5.74%, rgba(114, 57, 234, 0.81) 28.17%, rgba(124, 255, 255, 0.62) 62.19%, #04C8C8 91.87%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  --text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  -webkit-animation: animated_text 13s linear infinite !important;
+  animation: animated_text 13s linear infinite !important;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(5px);
+  }
+}
+
+.button-container:hover .arrow-icon {
+  animation: slide-in 0.3s forwards;
+}
+
+.bg-zillow-blue {
+  background-color: #006AFF;
+}
+
+.bg-zillow-dark-blue {
+  background-color: #0051cc;
+}
+
+.hover\:shadow-signUp:hover {
+  box-shadow: 0px 5px 10px rgba(4, 10, 34, 0.2);
+}
+
+.rotate {
+  -webkit-animation: rotation 4s infinite linear;
+  animation: rotation 4s infinite linear;
+}
